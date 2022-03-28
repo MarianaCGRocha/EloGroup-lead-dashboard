@@ -16,6 +16,8 @@ const Register : React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>('');
   const [passwordIsValid, setPasswordIsValid] = useState<boolean>(false);
   const [passwordIsEqual, setPasswordIsEqual] = useState<boolean>(false);
+  const [usernameIsUnique, setUsernameIsUnique] = useState<boolean>(false);
+  const [submited, setSubmited] = useState<boolean>(false);
 
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,8 +50,14 @@ const Register : React.FC = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    createUser({username, password});
-    navigate('/login');
+    if (createUser({username, password})) {
+      setSubmited(true);
+      setUsernameIsUnique(true);
+      navigate('/login');
+    } else {
+      setSubmited(true);
+      setUsernameIsUnique(false);
+    }
   }
 
   return ( 
@@ -62,6 +70,7 @@ const Register : React.FC = () => {
           value={username} 
           handleChange={handleUsernameChange}
         />
+        {(!usernameIsUnique && submited) && <Alert>Usuário já existe</Alert>}
         <SignUpField 
           label='Password' 
           type='password' 
@@ -82,7 +91,7 @@ const Register : React.FC = () => {
         {!passwordIsEqual && <Alert>Password não é igual a confirmação</Alert>}
         <SignUpButton 
           label='Registrar' 
-          handleClick={handleSubmit} 
+          handleClick={handleSubmit}
           disabled={!(username.length > 0 && passwordIsValid && passwordIsEqual)}
         />
       </SignUpBox>

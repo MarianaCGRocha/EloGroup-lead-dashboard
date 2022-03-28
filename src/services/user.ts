@@ -17,8 +17,13 @@ export function getUserList() {
 
 export function createUser( user: User ) {
   const userList = getUserList();
-  userList.push( user );
-  saveUserList( userList );
+  if ( userList.find( u => u.username === user.username ) ) {
+    return false;
+  } else {
+    userList.push( user );
+    saveUserList( userList );
+    return true;
+  }
 }
 
 export function verifyUser( user: User ) {
