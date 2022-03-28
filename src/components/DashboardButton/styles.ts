@@ -16,4 +16,10 @@ export const Button = styled.button`
     filter: brightness(0.8);
     cursor: pointer;
   }
+
+  :disabled {
+    background: #ccc;
+    color: black;
+    cursor: not-allowed;
+  }
 `

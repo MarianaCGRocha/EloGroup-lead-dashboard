@@ -6,13 +6,15 @@ export const Table = styled.table`
   border-collapse: collapse;
   border: 1px solid black;
 
-  > tr {
-    > th {
-      padding: 0.5em;
-      font-size: 1.1em;
-      border: 1px solid black;
-      background: #767676;
-      color: #ffffff;
+  > tbody {
+    > tr {
+      > th {
+        padding: 0.5em;
+        font-size: 1.1em;
+        border: 1px solid black;
+        background: #767676;
+        color: #ffffff;
+      }
     }
   }
 `

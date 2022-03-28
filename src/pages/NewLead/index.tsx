@@ -13,7 +13,7 @@ import SignUpButton from '../../components/SignUpButton';
 const NewLead : React.FC = () => {
   const context = useContext(AppContext);
   const navigate = useNavigate();
-  
+
   const emailRegex = new RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
   const phoneRegex = new RegExp(/(?:(?<=^)|(?<=\D))((00|\+)?55(\s|\.|-)*)?((\()?0?\d{2}(?<=(5)\)|)(\s|\.|-)*)?(9(\s|\.|-)*)?\d{4}(\s|\.|-)*\d{4}(?=\D|$)/, 'gm');
   const opportunitiesList = ['RPA', 'Produto Digital', 'Analytics', 'BPM'];
@@ -149,7 +149,11 @@ const NewLead : React.FC = () => {
             />
           </div>
         </Row>
-        <DashboardButton label='Salvar' handleClick={handleSave} />
+        <DashboardButton 
+          label='Salvar' 
+          handleClick={handleSave} 
+          disabled={ !(emailIsValid && phoneIsValid && opportunities.length > 0) } 
+        />
         <SignUpButton label='Voltar' handleClick={handleGoBack} />
       </ContainerBox>
     </Container>

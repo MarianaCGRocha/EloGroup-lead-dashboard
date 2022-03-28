@@ -11,22 +11,24 @@ type Props = {
 const OpportunitiesTable : React.FC<Props> = ({ opportunities, selected, handleCheckbox, handleSelectAll }) => {
   return (
     <Table>
-      <tr>
-        <th>
-          <input type='checkbox' onClick={handleSelectAll} />
-        </th>
-        <th></th>
-      </tr>
-      {
-        opportunities.map((opportunity, index) => (
-          <OpportunitiesTableItem 
-            key={index} 
-            opportunity={opportunity} 
-            checked={selected.indexOf(opportunity) !== -1} 
-            handleCheckbox={handleCheckbox} 
-          />
-        ))
-      }
+      <tbody>
+        <tr>
+          <th>
+            <input type='checkbox' onClick={handleSelectAll} />
+          </th>
+          <th></th>
+        </tr>
+        {
+          opportunities.map((opportunity) => (
+            <OpportunitiesTableItem 
+              key={opportunity} 
+              opportunity={opportunity} 
+              checked={selected.indexOf(opportunity) !== -1} 
+              handleCheckbox={handleCheckbox} 
+            />
+          ))
+        }
+      </tbody>
     </Table>
   )
 }

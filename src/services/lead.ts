@@ -4,7 +4,7 @@ export type Lead = {
   phone: string,
   email: string,
   opportunities: string[],
-  status?: number,
+  status?: number | 0,
 }
 
 export type LeadList = {
@@ -21,7 +21,7 @@ export function getLeadList() {
 
 export function createLead( lead: Lead ) {
   const leadList = getLeadList();
-  leadList.push( {...lead, id: leadList.lenght, status: 0} );
+  leadList.push( {...lead, id: Object.keys(leadList).length, status: 0} );
   saveLeadList( leadList );
 }
 

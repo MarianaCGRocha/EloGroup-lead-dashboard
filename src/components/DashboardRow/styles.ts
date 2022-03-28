@@ -7,3 +7,9 @@ export const TableRow = styled.tr`
     text-align: center;
   }
 `
+
+export const Item = styled.p`
+  :hover {
+    cursor: pointer;
+  }
+`
