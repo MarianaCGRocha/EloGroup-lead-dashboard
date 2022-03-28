@@ -4,8 +4,8 @@
 - Projeto desenvolvido com TypeScript para melhor legibilidade do código / Project developed with TypeScript for better code readability;
 - Todos os forms dependem de preenchimento de todos os campos corretamente / All forms depend on filling all fields correctly;
 - Todos os campos dos forms (telefone, e-mail e senha) tem filtros feitos através do uso de regex / All form fields (phone, email and password) have filters made with regex;
-- Filtro que não permite registros duplicados de usuários / Filter that doesn't allow duplicate user registrering;
-- Controle de status dos leads feito através da aribuição de um número (int) sendo 0 - 1 - 2 (hierarquia dos estágios do funil de marketing) na tabela de leads / Lead status control done by assigning a number (int), being 0 - 1 - 2 (marketing funnel stages hierarchy) in the leads table.
+- Filtro que não permite registros duplicados de usuários / Filter that doesn't allow duplicate user registering;
+- Controle de status dos leads feito através da atribuição de um número (int) sendo 0 - 1 - 2 (hierarquia dos estágios do funil de marketing) na tabela de leads / Lead status control done by assigning a number (int), being 0 - 1 - 2 (marketing funnel stages hierarchy) in the leads table.
 
 
 ------------
@@ -99,6 +99,9 @@ React-Router-DOM ([see more here](https://www.npmjs.com/package/react-router-dom
 ### Available Scripts
 Scripts que você pode executar no projeto:
 In the project directory, you can run:
+
+-`npm install`
+Instala todas as dependências do projeto / Install all the project dependencies.
 
 - `npm start`
 Roda o projeto no modo de desenvolvimento / Runs the app in the development mode.
