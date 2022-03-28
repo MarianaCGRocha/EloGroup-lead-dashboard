@@ -100,7 +100,7 @@ React-Router-DOM ([see more here](https://www.npmjs.com/package/react-router-dom
 Scripts que você pode executar no projeto:
 In the project directory, you can run:
 
--`npm install`
+- `npm install`
 Instala todas as dependências do projeto / Install all the project dependencies.
 
 - `npm start`
